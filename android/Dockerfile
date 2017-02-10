@@ -4,9 +4,7 @@ MAINTAINER tnextday <fw2k4@163.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV DEBIAN_FRONTEND noninteractive
 ENV ANDROID_HOME  /opt/android
-ENV ANDROID_NDK_HOME ${ANDROID_HOME}/ndk-bundle
 ENV GRADLE_USER_HOME /cache/.gradle
 ENV ANDROID_TOOLS https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
 
@@ -27,7 +25,9 @@ RUN ./tools/bin/sdkmanager "platform-tools"
 RUN ./tools/bin/sdkmanager "platforms;android-25"
 RUN ./tools/bin/sdkmanager "extras;android;m2repository"
 RUN ./tools/bin/sdkmanager "extras;google;m2repository"
-# RUN ./tools/bin/sdkmanager "ndk-bundle"
 RUN ./tools/bin/sdkmanager --update
+
+# ENV ANDROID_NDK_HOME ${ANDROID_HOME}/ndk-bundle
+# RUN ./tools/bin/sdkmanager "ndk-bundle"
 
 WORKDIR /build
