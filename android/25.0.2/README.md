@@ -7,7 +7,7 @@ are included to build our Android libraries and apps.
 ## Build local image
 
 ```bash
-$ docker build -t android-sdk:25.0.2 .
+$ docker build -t android:25.0.2 .
 ```
 
 This takes a while, since all packages from the Dockerfile need to be installed.
@@ -17,5 +17,5 @@ This takes a while, since all packages from the Dockerfile need to be installed.
 Connect to local container with a bash:
 
 ```bash
-$ docker run --rm -it android-sdk:25.0.2 bash
+$ docker run --rm -it android:25.0.2 bash
 ```
